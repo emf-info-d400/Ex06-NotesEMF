@@ -1,6 +1,6 @@
-package processeur.app;
+package notesemf.app;
 
-public class Processeur {
+public class NotesEMF {
 
     public static void main(String[] args) {
 
