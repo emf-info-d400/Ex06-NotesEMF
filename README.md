@@ -78,31 +78,31 @@ Voici le diagramme de séquence de la méthode de la méthode `main()` de la cla
 ```mermaid
 sequenceDiagram
     participant main
-    main->>Branche physique: new Branche("Physique")
-    Branche physique-->>main: branchePhysique=
-    main->>Branche math: new Branche("Math")
-    Branche math-->>main: brancheMath=
-    main->>NoteN1: new Note("17.09.2023",5.2)
-    NoteN1-->>main: n1=
-    main->>Branche math: ajouteNote(n1)
-    main->>NoteN2: new Note(5.4)
-    NoteN2-->>main: n2=
-    main->>Branche math: ajouteNote(n2)
-    main->>NoteN3: new Note("22.10.2023",5.0)
-    NoteN3-->>main: n3=
-    main->>Branche physique: ajouteNote(n3)
-    main->>NoteN4: new Note("14.12.2023",4.9)
-    NoteN4-->>main: n4=
-    main->>Branche physique: ajouteNote(n4)
-    main->>NoteN5: new Note("07.01.2024",4.9)
-    NoteN5-->>main: n5=
-    main->>Branche physique: ajouteNote(n5)
+    create participant branchePhysique
+    main->>branchePhysique: new Branche("Physique")
+    create participant BrancheMath
+    main->>BrancheMath: new Branche("Math")
+    create participant n1
+    main->>n1: new Note("17.09.2023",5.2)
+    main->>BrancheMath: ajouteNote(n1)
+    create participant n2
+    main->>n2: new Note(5.4)
+    main->>BrancheMath: ajouteNote(n2)
+    create participant n3
+    main->>n3: new Note("22.10.2023",5.0)
+    main->>branchePhysique: ajouteNote(n3)
+    create participant n4
+    main->>n4: new Note("14.12.2023",4.9)
+    main->>branchePhysique: ajouteNote(n4)
+    create participant n5
+    main->>n5: new Note("07.01.2024",4.9)
+    main->>branchePhysique: ajouteNote(n5)
     main->>System.out: println(brancheMath)
-    System.out->>Branche math: toString()
-    Branche math-->System.out: resultat=
+    System.out->>BrancheMath: toString()
+    BrancheMath-->System.out: resultat=
     main->>System.out: println(brancheMath.toString())
     main->>System.out: println(branchePhysique.toString())
-    main->>Branche physique: afficherDetails()
+    main->>branchePhysique: afficherDetails()
 ```
 ### Javadoc
 Vous pouvez cliquer sur [ce lien pour obtenir la JavaDoc en HTML](javadoc/index.html) de l'application NotesEMF.
