@@ -1,5 +1,5 @@
 # Exercice 06 : Notes EMF
-## durée : 120'
+## Durée : 120'
 ## Objectifs visés :
 Maîtriser les diagrammes de séquence et devenir familier des diagrammes de classes et avec la Javadoc.
 
@@ -80,14 +80,14 @@ sequenceDiagram
     participant main
     create participant branchePhysique
     main->>branchePhysique: new Branche("Physique")
-    create participant BrancheMath
-    main->>BrancheMath: new Branche("Math")
+    create participant brancheMath
+    main->>brancheMath: new Branche("Math")
     create participant n1
     main->>n1: new Note("17.09.2023",5.2)
-    main->>BrancheMath: ajouteNote(n1)
+    main->>brancheMath: ajouteNote(n1)
     create participant n2
     main->>n2: new Note(5.4)
-    main->>BrancheMath: ajouteNote(n2)
+    main->>brancheMath: ajouteNote(n2)
     create participant n3
     main->>n3: new Note("22.10.2023",5.0)
     main->>branchePhysique: ajouteNote(n3)
@@ -98,8 +98,7 @@ sequenceDiagram
     main->>n5: new Note("07.01.2024",4.9)
     main->>branchePhysique: ajouteNote(n5)
     main->>System.out: println(brancheMath)
-    System.out->>BrancheMath: toString()
-    BrancheMath-->System.out: resultat=
+    System.out->>brancheMath: toString()
     main->>System.out: println(brancheMath.toString())
     main->>System.out: println(branchePhysique.toString())
     main->>branchePhysique: afficherDetails()
