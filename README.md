@@ -105,4 +105,4 @@ sequenceDiagram
     main->>branchePhysique: afficherDetails()
 ```
 ### Javadoc
-Vous pouvez cliquer sur [ce lien pour obtenir la JavaDoc en HTML](javadoc/index.html) de l'application NotesEMF.
+La Javadoc se trouve directement dans les classes Java. Il ne vous reste plus qu'à remplacer les commentaires `// VOTRE CODE ICI...`
