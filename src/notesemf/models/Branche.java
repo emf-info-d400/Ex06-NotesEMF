@@ -66,7 +66,8 @@ public class Branche {
      * @return la note de la branche arrondie au 0.25 à l'aide de la méthode décrite
      */
     public double calculerMoyenneArrondie() {
-        // VOTRE CODE ICI...    }
+        // VOTRE CODE ICI...
+    }
 
     /**
      * Produit une chaîne de caractères contenant toutes les informations de cette
