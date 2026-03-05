@@ -39,21 +39,21 @@ class Branche {
     +ajouterNote(Note note) void
     +calculerMoyenneArrondie() double
     +calculerMoyenneDeLaBranche() double
-    +getNom() String
-    +getNotes() Notes[]
     +listeDesNotesDeLaBranche() String
     +toString() String
+    +getNom() String
+    +getNotes() Notes[]
 }
 
 class Note {
-    -String date
     -double note
+    -String date
     +Note(double note)
     +Note(String date, double note)
-    +getDate() String
-    +getNote() double
+    +toString() String
     +getNoteFormatee() String
-    toString() String
+    +getNote() double
+    +getDate() String
 }
 Branche o--> "0..*" Note : -notes
 ```
@@ -61,16 +61,12 @@ Branche o--> "0..*" Note : -notes
 Voici la structure des packages pour chaque classe du projet
 ```mermaid
 classDiagram
-namespace notesemf {
-    class app
-    class models
-}
 namespace app {
     class NotesEMF
 }
 namespace models {
     class Branche
-    class Note 
+    class Note
 }
 ```
 ### Diagramme de séquence
@@ -98,7 +94,9 @@ sequenceDiagram
     main->>n5: new Note("07.01.2024",4.9)
     main->>branchePhysique: ajouteNote(n5)
     main->>System.out: println(brancheMath)
+    activate System.out
     System.out->>brancheMath: toString()
+    deactivate System.out
     main->>System.out: println(brancheMath.toString())
     main->>System.out: println(branchePhysique.toString())
     main->>branchePhysique: afficherDetails()
